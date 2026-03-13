@@ -8,4 +8,6 @@ public interface PostRepository {
     List<Post> findLastDayPosts();
 
     List<Post> findByBrand(String name);
+
+    List<Post> findPostWithPhoto();
 }

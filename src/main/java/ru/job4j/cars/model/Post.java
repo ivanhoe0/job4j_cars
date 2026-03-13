@@ -38,4 +38,8 @@ public class Post {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "car_id", unique = true)
     private Car car;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "file_id", unique = true)
+    private FIle fIle;
 }

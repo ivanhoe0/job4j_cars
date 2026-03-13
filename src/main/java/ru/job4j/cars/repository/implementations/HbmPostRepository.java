@@ -22,4 +22,9 @@ public class HbmPostRepository implements PostRepository {
         LocalDateTime twentyFourHoursAgo = LocalDateTime.now().minusHours(24);
         return crudRepository.query("FROM Post p WHERE p.created <= :pdate", Post.class, Map.of("pdate", twentyFourHoursAgo));
     }
+
+    @Override
+    public List<Post> findPostWithPhoto() {
+        return crudRepository.query("FROM Post p JOIN FETCH p.file WHERE p.file IS NOT NULL", Post.class);
+    }
 }
