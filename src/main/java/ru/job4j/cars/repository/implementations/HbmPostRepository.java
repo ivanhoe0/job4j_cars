@@ -25,6 +25,6 @@ public class HbmPostRepository implements PostRepository {
 
     @Override
     public List<Post> findPostWithPhoto() {
-        return crudRepository.query("FROM Post p JOIN FETCH p.file WHERE p.file IS NOT NULL", Post.class);
+        return crudRepository.query("FROM Post p JOIN FETCH p.files", Post.class);
     }
 }

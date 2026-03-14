@@ -39,7 +39,7 @@ public class Post {
     @JoinColumn(name = "car_id", unique = true)
     private Car car;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "file_id", unique = true)
-    private FIle fIle;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "post_id")
+    private List<FIle> files = new ArrayList<>();
 }
