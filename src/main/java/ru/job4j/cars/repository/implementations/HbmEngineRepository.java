@@ -21,4 +21,15 @@ public class HbmEngineRepository implements EngineRepository {
     public List<Engine> findAll() {
         return crudRepository.query("FROM Engine", Engine.class);
     }
+
+    @Override
+    public Engine save(Engine engine) {
+        crudRepository.run(session -> session.save(engine));
+        return engine;
+    }
+
+    @Override
+    public void deleteAll() {
+        crudRepository.query("DELETE FROM Engine", Engine.class);
+    }
 }

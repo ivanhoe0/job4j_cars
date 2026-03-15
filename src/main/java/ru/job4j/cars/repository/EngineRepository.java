@@ -9,4 +9,8 @@ public interface EngineRepository {
     List<Engine> findAll();
 
     Optional<Engine> findById(int id);
+
+    Engine save(Engine engine);
+
+    void deleteAll();
 }
